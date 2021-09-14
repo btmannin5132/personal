@@ -7,7 +7,8 @@ breaks = 0
 totiteration = 0
 trials = 1000000
 profit = 0
-avggain = 0
+avgGain = 0
+avgLoss = 0
 maxGain = 0
 maxLoss = 0
 for x in range(0,trials):
@@ -29,7 +30,7 @@ for x in range(0,trials):
             pool += bet
         iteration += 1
         #print("pool: " + str(pool) + "-- Bet: " + str(bet))
-    #print(iteration)
+        #print(iteration)
         if pool > inpool:  #remove this if you want to be greedy and see if you can break the casino.
             break
     if pool < inpool:
@@ -46,8 +47,10 @@ for x in range(0,trials):
     profit += (pool - inpool)
     if (pool - inpool) > maxGain:
         maxGain = (pool - inpool)
+        avgGain += (pool - inpool)
     if (pool - inpool) < maxLoss:
         maxLoss = (pool - inpool)
+        avgLoss += (pool - inpool)
     
 print("wins: " + str(wins))
 print("losses: " + str(loose))
@@ -55,5 +58,7 @@ print("losses: " + str(loose))
 print("total profit after " + str(trials) + " trials: $"  + str(profit))
 print("Average profit per trial: " + str((profit/trials)))
 print("max Gain: " + str(maxGain))
+print("avg Gain: " + str(avgGain/wins))
 print("max loss: " + str(maxLoss))
+print("avg Loss: " + str(avgLoss/loose))
 print("Average turns on table: " + str(int(totiteration/trials)))
