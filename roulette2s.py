@@ -12,7 +12,7 @@ avgLoss = 0
 maxGain = 0
 maxLoss = 0
 for x in range(0,trials):
-    inpool = 1000
+    inpool = 10000
     pool = inpool
     bet = 5
     end = 10000000 #"break the casino"
