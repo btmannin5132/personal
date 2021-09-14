@@ -27,7 +27,7 @@ for x in range(0,trials):
         iteration += 1
         #print("pool: " + str(pool) + "-- Bet: " + str(bet))
     #print(iteration)
-        if pool > inpool:
+        if pool > inpool:  #remove this if you want to be greedy and see if you can break the casino.
             break
     if pool < inpool:
         #  print("loose")

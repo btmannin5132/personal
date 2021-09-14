@@ -26,7 +26,7 @@ for x in range(0,trials):
             pool -= bet
             bet *= betInc
         iteration += 1
-        if pool > inpool:
+        if pool > inpool: #remove this if you want to see if you can break the casino.
             break
         #print("pool: " + str(pool) + "-- Bet: " + str(bet))
     #print(iteration)
