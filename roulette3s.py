@@ -2,6 +2,7 @@ import random
 import math
 betInc = 1.5
 def threes(inc,trials,bet):
+    orgBet = bet
     wins = 0
     loose = 0
     breaks = 0
@@ -15,6 +16,7 @@ def threes(inc,trials,bet):
 
 
     for x in range(0,trials):
+        bet = orgBet
         inpool = 1000
         pool = inpool
         end = 10000000 #"break the casino"
@@ -42,11 +44,12 @@ def threes(inc,trials,bet):
         else:
             #print("Win!")
             wins +=1
+            profit += (pool - inpool)
         if pool >= end:
             print("Time at table to break: " + str(iteration))
             breaks +=1
         totiteration += iteration
-        profit += (pool - inpool)
+        
         if (pool - inpool) > maxGain:
             maxGain = (pool - inpool)
         if (pool - inpool) < maxLoss:
@@ -62,6 +65,7 @@ def threes(inc,trials,bet):
     print("max loss: " + str(maxLoss))
     print("Average turns on table: " + str(int(totiteration/trials)))
     """
-    return wins/trials,abs(profit/trials),totbet/trials
+    return wins/trials,abs(profit/wins),totbet/trials
+
 
 
