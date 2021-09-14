@@ -6,6 +6,10 @@ breaks = 0
 totiteration = 0
 profit = 0
 trials = 1000000
+
+avggain = 0
+maxGain = 0
+maxLoss = 0
 #change this value
 betInc = 1.5
 for x in range(0,trials):
@@ -41,9 +45,16 @@ for x in range(0,trials):
         breaks +=1
     totiteration += iteration
     profit += (pool - inpool)
+    if (pool - inpool) > maxGain:
+        maxGain = (pool - inpool)
+    if (pool - inpool) < maxLoss:
+        maxLoss = (pool - inpool)
     
 print("wins: " + str(wins))
 print("losses: " + str(loose))
-print("breaks: " + str(breaks))
+#print("breaks: " + str(breaks))
+print("total profit after " + str(trials) + " trials: $"  + str(profit))
+print("Average profit per trial: " + str((profit/trials)))
+print("max Gain: " + str(maxGain))
+print("max loss: " + str(maxLoss))
 print("Average turns on table: " + str(int(totiteration/trials)))
-print("total profit after " + str(trials) + " trials:"  + str(profit))
