@@ -8,7 +8,7 @@ AF_DCMotor skull1(1);
 AF_DCMotor skull2(2);
 AF_DCMotor skull3(3);
 
-int threshold = 200;
+int threshold = 350;
 
 const int a0 = A0;
 const int a1 = A1;
@@ -55,6 +55,7 @@ void setup() {
   for (int thisReading = 0; thisReading < numReadings; thisReading++) {
     readings[thisReading] = 0;
     readings1[thisReading] = 0;
+    readings2[thisReading] = 0;
   }
 }
 
@@ -79,11 +80,10 @@ void loop() {
   // read from the sensor:
   readings1[readIndex] = a1Out;
   // add the reading to the total:
-  total = total + readings[readIndex];
-
-  total1 = total1 - readings1[readIndex];
+  total1 = total1 + readings1[readIndex];
 
 
+  total2 = total2 - readings2[readIndex];
   // read from the sensor:
   readings2[readIndex] = a2Out;
   // add the reading to the total:
@@ -103,66 +103,69 @@ void loop() {
   average2 = total2 / numReadings;
   // print the results to the Serial Monitor:
   //Serial.print("sensor = ");
-  Serial.print(average);
-  Serial.print(",");
-  Serial.print(average1);
-  Serial.print(",");
+    //Serial.print(a0Out);
+//    Serial.print(average);
+//    Serial.print(",");
+    //Serial.print(a1Out);
+    Serial.print(a2Out);
+   Serial.print(",");
+  // Serial.println(a2Out);
   Serial.println(average2);
   //Serial.print("\t output = ");
   //Serial.println(outputValue);
-//
-//  if (a0Out > abs(threshold)) {
-//    skull1.run(FORWARD);
-//  }
-//  else {
-//    skull1.run(RELEASE);
-//  }
-//
-//  if (a1Out > abs(threshold)) {
-//    skull2.run(FORWARD);
-////    skull1.run(FORWARD);
-////    skull3.run(FORWARD);
-//
-//  }
-//  else {
-//    skull2.run(RELEASE);
-////    skull1.run(RELEASE);
-////    skull3.run(RELEASE);
-//
-//
-//  }
-//
-//  if (a2Out > abs(threshold)) {
-//    skull3.run(FORWARD);
-//
-//  }
-//  else {
-//    skull3.run(RELEASE);
-//  }
+  //
+  //  if (a0Out > abs(threshold)) {
+  //    skull1.run(FORWARD);
+  //  }
+  //  else {
+  //    skull1.run(RELEASE);
+  //  }
+  //
+  //  if (a1Out > abs(threshold)) {
+  //    skull2.run(FORWARD);
+  ////    skull1.run(FORWARD);
+  ////    skull3.run(FORWARD);
+  //
+  //  }
+  //  else {
+  //    skull2.run(RELEASE);
+  ////    skull1.run(RELEASE);
+  ////    skull3.run(RELEASE);
+  //
+  //
+  //  }
+  //
+  //  if (a2Out > abs(threshold)) {
+  //    skull3.run(FORWARD);
+  //
+  //  }
+  //  else {
+  //    skull3.run(RELEASE);
+  //  }
 
 
-  if (a0Out > abs(threshold)) {
+  if (a0Out > average*1.25 && a0Out > 50) {
     skull1.run(FORWARD);
   }
   else {
     skull1.run(RELEASE);
   }
 
-  if (a1Out > abs(threshold)) {
+  if (a1Out > average1*1.5&& a1Out > 50) {
     skull2.run(FORWARD);
-//    skull1.run(FORWARD);
-//    skull3.run(FORWARD);
+    //    skull1.run(FORWARD);
+    //    skull3.run(FORWARD);
 
   }
   else {
     skull2.run(RELEASE);
-//    skull1.run(RELEASE);
-//    skull3.run(RELEASE);
+    //    skull1.run(RELEASE);
+    //    skull3.run(RELEASE);
 
 
   }
 
-  if (a2Out > abs(threshold)) {
+  if (average2 > 75) {
     skull3.run(FORWARD);
 
   }
@@ -170,5 +173,5 @@ void loop() {
     skull3.run(RELEASE);
   }
 
-  delay(3);
+  delay(15);
 }
