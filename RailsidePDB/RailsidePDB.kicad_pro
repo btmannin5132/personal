@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 4.25,
-          "height": 6.0,
-          "width": 6.0
+          "drill": 6.8,
+          "height": 7.25,
+          "width": 7.25
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -484,7 +484,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "PD1.1/",
+      "plot": "PD1.3/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",

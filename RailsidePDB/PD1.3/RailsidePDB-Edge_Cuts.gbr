@@ -1,0 +1,23 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,8.0.5*%
+%TF.CreationDate,2024-12-04T12:45:57-05:00*%
+%TF.ProjectId,RailsidePDB,5261696c-7369-4646-9550-44422e6b6963,rev?*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Profile,NP*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 8.0.5) date 2024-12-04 12:45:57*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%TA.AperFunction,Profile*%
+%ADD10C,0.200000*%
+%TD*%
+G04 APERTURE END LIST*
+D10*
+X67500000Y-62000000D02*
+X112500000Y-62000000D01*
+X112500000Y-84500000D01*
+X67500000Y-84500000D01*
+X67500000Y-62000000D01*
+M02*
