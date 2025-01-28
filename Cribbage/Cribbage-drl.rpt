@@ -1,0 +1,22 @@
+Drill report for Cribbage.kicad_pcb
+Created on 2024-12-08T15:38:26-0500
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'Cribbage-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  2.000mm  0.0787"  (361 holes)
+
+    Total plated holes count 361
+
+
+Drill file 'Cribbage-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+
+    Total unplated holes count 0

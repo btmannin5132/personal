@@ -1,0 +1,24 @@
+Drill report for RailsidePDB.kicad_pcb
+Created on 2024-12-06T12:49:14-0500
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'RailsidePDB-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  1.780mm  0.0701"  (4 holes)
+    T2  1.800mm  0.0709"  (8 holes)
+
+    Total plated holes count 12
+
+
+Drill file 'RailsidePDB-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  6.807mm  0.2680"  (2 holes)
+
+    Total unplated holes count 2
