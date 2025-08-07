@@ -176,7 +176,10 @@ function clearMatrix() {
 }
 
 function loadPreset(presetCode) {
+  // First, send the command to the Arduino
   writeValue(presetCode);
+  
+  // Then, update the visual grid on the webpage
   const presetFrames = {
     'S': [
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -225,3 +228,4 @@ function loadPreset(presetCode) {
 </script>
 </body>
 </html>
+
